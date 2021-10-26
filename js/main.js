@@ -25,3 +25,29 @@ accessBtn.addEventListener('click',
     }
 )
 
+//GIOCO DEI DADI
+const playBtn = document.querySelector('.btn-play');
+let playerResult = document.querySelector('.player-result');
+let computerResult = document.querySelector('.computer-result');
+let winner = document.querySelector('.winner')
+
+playBtn.addEventListener('click',
+    function() {
+        let numbPlayer = Math.floor(Math.random() * 6) + 1;
+        let numbComputer = Math.floor(Math.random() * 6) + 1;
+        playerResult.innerHTML = `Il player ha fatto: ${numbPlayer}`;
+        computerResult.innerHTML = `Il computer ha fatto ${numbComputer}`;
+
+        if (numbPlayer > numbComputer) {
+            winner.innerHTML = 'Player vince!!';
+        }
+        else if (numbComputer > numbPlayer) {
+            winner.innerHTML = 'Il computer vince, sarai più fortunato la prossima volta';
+        }
+        else {
+            winner.innerHTML = 'Avete fatto lo stesso numero, riprova!!'
+        }
+    }
+)
+
+
